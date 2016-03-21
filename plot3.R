@@ -13,10 +13,12 @@ DT <- strptime(paste(powerSubset$Date, powerSubset$Time, sep=" "), "%d/%m/%Y %H:
 
 png("plot3.png", width=480, height=480)
 
-with(powerSubset, plot(DT, subMT1, xlab = " ", ylab = "Energy sub metering", type = "l"))
-lines(DT, subMT2, type="l", col="red")
-lines(DT, subMT3, type="l", col="blue")
-legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty = 1, col=c("black", "red", "blue"))
+with(powerSubset, {
+    plot(DT, subMT1, xlab = " ", ylab = "Energy sub metering", type = "l")
+        lines(DT, subMT2, type="l", col="red")
+        lines(DT, subMT3, type="l", col="blue")
+        legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty = 1, col=c("black", "red", "blue"))
+})
 
 dev.off()
     
